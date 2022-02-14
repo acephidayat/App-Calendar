@@ -3,7 +3,22 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const EventForm = () => {
+const EventForm = (props) => {
+  const {
+    eventTitle,
+    dateStart,
+    dateEnd,
+    checkbox,
+    colorSelected,
+    colorOption,
+    eventTitleChange,
+    checkboxChange,
+    colorChange,
+    dateChange,
+    eventSubmit,
+    isShowTime,
+  } = props;
+
   return (
     <div
       id="create-event"
@@ -36,6 +51,8 @@ const EventForm = () => {
                 <input
                   type="text"
                   nama="event-title"
+                  value={eventTitle}
+                  onChange={eventTitleChange}
                   placeholder="Enter Title"
                   className="form-control"
                 />
@@ -44,6 +61,8 @@ const EventForm = () => {
                 <input
                   type="checkbox"
                   nama="checkbox"
+                  value={checkbox}
+                  onChange={checkboxChange}
                   placeholder="Enter Title"
                   className="form-check-input"
                 />
